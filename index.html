@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda con Filtros y Carrito</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">MiTienda</div>
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Productos</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="cart" id="cart-btn">
+      🛒 <span id="cart-count">0</span>
+    </div>
+  </header>
+
+  <!-- Contenedor principal -->
+  <div class="container">
+    <!-- Barra lateral -->
+    <aside class="sidebar">
+      <h3>Filtros</h3>
+      <label><input type="checkbox" value="remera" class="filter"> Remeras</label>
+      <label><input type="checkbox" value="pantalon" class="filter"> Pantalones</label>
+      <label><input type="checkbox" value="buzo" class="filter"> Buzos</label>
+    </aside>
+
+    <!-- Productos -->
+    <main class="productos" id="productos">
+      <article class="producto" data-category="remera">
+        <img src="https://via.placeholder.com/200" alt="Remera básica">
+        <h2>Remera básica</h2>
+        <p>$5.000</p>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </article>
+
+      <article class="producto" data-category="pantalon">
+        <img src="https://via.placeholder.com/200" alt="Pantalón jogger">
+        <h2>Pantalón jogger</h2>
+        <p>$9.500</p>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </article>
+
+      <article class="producto" data-category="buzo">
+        <img src="https://via.placeholder.com/200" alt="Buzo oversize">
+        <h2>Buzo oversize</h2>
+        <p>$12.000</p>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </article>
+
+      <article class="producto" data-category="remera">
+        <img src="https://via.placeholder.com/200" alt="Remera estampada">
+        <h2>Remera estampada</h2>
+        <p>$6.500</p>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </article>
+    </main>
+  </div>
+
+  <!-- Carrito -->
+  <div class="cart-modal" id="cart-modal">
+    <h3>Tu carrito</h3>
+    <ul id="cart-items"></ul>
+    <p>Total: $<span id="cart-total">0</span></p>
+    <button id="close-cart">Cerrar</button>
+  </div>
+
+  <footer>
+    <p>© 2025 MiTienda - Todos los derechos reservados</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
