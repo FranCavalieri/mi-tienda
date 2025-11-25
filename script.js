@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+// --- Carrito ---
+>>>>>>> 8de8a5522e0218840438524601badbce6441c868
 const cartBtn = document.getElementById("cart-btn");
 const cartModal = document.getElementById("cart-modal");
 const closeCartBtn = document.getElementById("close-cart");
@@ -11,12 +15,17 @@ document.querySelectorAll(".add-to-cart").forEach(button => {
   button.addEventListener("click", e => {
     const product = e.target.closest(".producto");
     const name = product.querySelector("h2").textContent;
+<<<<<<< HEAD
     const price = parseFloat(product.querySelector("p").textContent.replace("$", "").replace(".", "")); 
+=======
+    const price = parseFloat(product.querySelector("p").textContent.replace("$", "").replace(".", ""));
+>>>>>>> 8de8a5522e0218840438524601badbce6441c868
     cart.push({ name, price });
     updateCart();
   });
 });
 
+<<<<<<< HEAD
 // Modificación de la función updateCart
 function updateCart() {
   cartItemsList.innerHTML = "";
@@ -57,6 +66,21 @@ function deleteItemFromCart(index) {
 }
 
 
+=======
+function updateCart() {
+  cartItemsList.innerHTML = "";
+  let total = 0;
+  cart.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = `${item.name} - $${item.price.toLocaleString()}`;
+    cartItemsList.appendChild(li);
+    total += item.price;
+  });
+  cartCount.textContent = cart.length;
+  cartTotal.textContent = total.toLocaleString();
+}
+
+>>>>>>> 8de8a5522e0218840438524601badbce6441c868
 cartBtn.addEventListener("click", () => cartModal.classList.add("active"));
 closeCartBtn.addEventListener("click", () => cartModal.classList.remove("active"));
 
@@ -78,4 +102,8 @@ filters.forEach(filter => {
           : "none";
     });
   });
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 8de8a5522e0218840438524601badbce6441c868
