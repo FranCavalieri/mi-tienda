@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tienda con Filtros y Carrito</title>
+  <title>FC Indumentaria</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="\images\logofc.jpeg"
 </head>
 <body>
 
@@ -13,15 +14,20 @@
     <div class="logo">FC Indumentaria</div>
     <nav>
       <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Productos</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li><a href="#Inicio" onclick="seleccionar()" >Inicio</a></li>
+        <li><a href="#Productos" onclick="seleccionar()">Productos</a></li>
+        <li><a href="#Contacto" onclick="seleccionar()">Contacto</a></li>
       </ul>
     </nav>
     <div class="cart" id="cart-btn">
       🛒 <span id="cart-count">0</span>
     </div>
   </header>
+
+  <section id="Inicio" class="inicio">
+  <div class="nosotros">
+    <p>Somos una tienda de ropa masculina, dedicada exclusivamente a ofrecer estilo, variedad y calidad para el hombre actual. Desde remeras y pantalones hasta camperas, gorras, lentes y relojes, nuestro objetivo es brindar productos que acompañen cada momento y reflejen la identidad masculina. Somos un proyecto joven, impulsado por la pasión por la moda urbana, y trabajamos día a día para ofrecer prendas modernas, accesibles y con personalidad.</p>
+  </section>
 
   <!-- Contenedor principal -->
   <div class="container">
@@ -31,38 +37,72 @@
       <label><input type="checkbox" value="remera" class="filter"> Remeras</label>
       <label><input type="checkbox" value="pantalon" class="filter"> Pantalones</label>
       <label><input type="checkbox" value="buzo" class="filter"> Buzos</label>
+      <label><input type="checkbox" value="campera" class="filter"> Camperas</label>
+      <label><input type="checkbox" value="lentes" class="filter"> Lentes</label>
+      <label><input type="checkbox" value="gorra" class="filter"> Gorras</label>
+      <label><input type="checkbox" value="reloj" class="filter"> Relojes</label>
     </aside>
 
     <!-- Productos -->
+    <section id="Productos" class="Productos">
     <main class="productos" id="productos">
       <article class="producto" data-category="remera">
-        <img src="https://via.placeholder.com/200" alt="Remera básica">
+        <img src="\images\r1.avif" alt="Remera básica">
         <h2>Remera básica</h2>
-        <p>$5.000</p>
+        <p>$15.000</p>
         <button class="add-to-cart">Agregar al carrito</button>
       </article>
 
       <article class="producto" data-category="pantalon">
-        <img src="https://via.placeholder.com/200" alt="Pantalón jogger">
+        <img src="\images\pj.webp" alt="Pantalón jogger">
         <h2>Pantalón jogger</h2>
-        <p>$9.500</p>
+        <p>$39.500</p>
         <button class="add-to-cart">Agregar al carrito</button>
       </article>
 
       <article class="producto" data-category="buzo">
-        <img src="https://via.placeholder.com/200" alt="Buzo oversize">
+        <img src="\images\bo.jpg" alt="Buzo oversize">
         <h2>Buzo oversize</h2>
-        <p>$12.000</p>
+        <p>$32.000</p>
         <button class="add-to-cart">Agregar al carrito</button>
       </article>
 
       <article class="producto" data-category="remera">
-        <img src="https://via.placeholder.com/200" alt="Remera estampada">
+        <img src="\images\re.jpg" alt="Remera estampada">
         <h2>Remera estampada</h2>
-        <p>$6.500</p>
+        <p>$20.500</p>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </article>
+
+        <article class="producto" data-category="campera">
+        <img src="\images\cc.jpg" alt="Campera de cuero">
+        <h2>Campera de cuero</h2>
+        <p>$60.500</p>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </article>
+
+        <article class="producto" data-category="lentes">
+        <img src="\images\ls.jpg" alt="Lentes de sol">
+        <h2>Lentes de sol</h2>
+        <p>$19.000</p>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </article>
+
+        <article class="producto" data-category="gorra">
+        <img src="\images\g.webp" alt="Gorra">
+        <h2>Gorra estilo NBA</h2>
+        <p>$18.500</p>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </article>
+
+        <article class="producto" data-category="reloj">
+        <img src="\images\rh.jpg" alt="Reloj">
+        <h2>Reloj Montreal</h2>
+        <p>$40.700</p>
         <button class="add-to-cart">Agregar al carrito</button>
       </article>
     </main>
+    </section>
   </div>
 
   <!-- Carrito -->
@@ -72,10 +112,56 @@
     <p>Total: $<span id="cart-total">0</span></p>
     <button id="close-cart">Cerrar</button>
   </div>
-
+  <section id="Contacto" class="contacto">
+        <div class="contenido-seccion">
+            <div class="fila">          
+                </div>
+                <div class="col">
+                    <img src="\images\lmt.jpeg" alt="imagen de la localizacion">
+                    <div class="info">
+                        <ul>
+                            <li>
+                                <i class="adress"></i>
+                                Juan de Ayolas 2843, B1678, Caseros, Buenos Aires
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-mobile-screen"></i>
+                                Telefono: 1132137838
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-envelope"></i>
+                                Email: francocavalieri3@gmial.com
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </section> 
   <footer>
     <p>© 2025 FC Indumentaria - Todos los derechos reservados</p>
-  </footer>
+        <div class="social-container">
+        <a href="https://instagram.com" class="instagram">
+            <img src="images/ig.png" alt="">
+        </a>
+        <a href="https://facebook.com" class="facebook">
+            <img src="images/fb.png" alt="">
+        </a>
+        <a href="https://www.x.com/" class="twitter">
+            <img src="images/x.png" alt="">
+        </a>
+        <a href="https://www.tiktok.com/" class="tiktok">
+            <img src="images/tt.webp" alt="">
+        </a>
+    </div>
+        <a href="#Inicio" class="arriba">
+            <i class="fa-solid fa-angles-up"></i>
+            <div class="img_footer">
+                <img src="images\flecha.png" alt="imagen de una flecha">
+            </div>
+        </a>
+    </footer>
+
 
   <script src="script.js"></script>
 </body>
