@@ -2,6 +2,11 @@ html{
     scroll-behavior: smooth;
 }
 
+body {
+  padding-top: 100px; /* o la altura real de tu header */
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -78,11 +83,13 @@ header nav a:hover {
 /* Layout */
 .container {
   display: flex;
+  align-items: flex-start;
   gap: 1rem;
-  padding-top: 40px;
-  padding-right: 30px;
-  padding-left: 30px;
+  width: 100%;
+  margin-top: 120px; /* evita que el header fijo lo tape */
+  padding: 20px;
 }
+
 
 /* Sidebar */
 .sidebar {
