@@ -33,77 +33,113 @@
 <div class="container">
 
   <!-- Barra lateral -->
-  <aside class="sidebar">
-    <h3>Filtros</h3>
-    <label><input type="checkbox" value="remera" class="filter"> Remeras</label>
-    <label><input type="checkbox" value="pantalon" class="filter"> Pantalones</label>
-    <label><input type="checkbox" value="buzo" class="filter"> Buzos</label>
-    <label><input type="checkbox" value="campera" class="filter"> Camperas</label>
-    <label><input type="checkbox" value="lentes" class="filter"> Lentes</label>
-    <label><input type="checkbox" value="gorra" class="filter"> Gorras</label>
-    <label><input type="checkbox" value="reloj" class="filter"> Relojes</label>
-  </aside>
+<aside class="sidebar">
+  <h3>Filtros</h3>
 
-  <!-- Productos (SIN SECTION ENCIMA) -->
-  <main class="productos" id="productos">
+  <label>
+    <input type="checkbox" value="remera" class="filter">
+    <span></span>
+    Remeras
+  </label>
 
-      <article class="producto" data-category="remera">
-        <img src="\images\r1.avif" alt="Remera básica">
-        <h2>Remera básica</h2>
-        <p>$15.000</p>
-        <button class="add-to-cart">Agregar al carrito</button>
-      </article>
+  <label>
+    <input type="checkbox" value="pantalon" class="filter">
+    <span></span>
+    Pantalones
+  </label>
 
-      <article class="producto" data-category="pantalon">
-        <img src="\images\pj.webp" alt="Pantalón jogger">
-        <h2>Pantalón jogger</h2>
-        <p>$39.500</p>
-        <button class="add-to-cart">Agregar al carrito</button>
-      </article>
+  <label>
+    <input type="checkbox" value="buzo" class="filter">
+    <span></span>
+    Buzos
+  </label>
 
-      <article class="producto" data-category="buzo">
-        <img src="\images\bo.jpg" alt="Buzo oversize">
-        <h2>Buzo oversize</h2>
-        <p>$32.000</p>
-        <button class="add-to-cart">Agregar al carrito</button>
-      </article>
+  <label>
+    <input type="checkbox" value="campera" class="filter">
+    <span></span>
+    Camperas
+  </label>
 
-      <article class="producto" data-category="remera">
-        <img src="\images\re.jpg" alt="Remera estampada">
-        <h2>Remera estampada</h2>
-        <p>$20.500</p>
-        <button class="add-to-cart">Agregar al carrito</button>
-      </article>
+  <label>
+    <input type="checkbox" value="lentes" class="filter">
+    <span></span>
+    Lentes
+  </label>
 
-      <article class="producto" data-category="campera">
-        <img src="\images\cc.jpg" alt="Campera de cuero">
-        <h2>Campera de cuero</h2>
-        <p>$60.500</p>
-        <button class="add-to-cart">Agregar al carrito</button>
-      </article>
+  <label>
+    <input type="checkbox" value="gorra" class="filter">
+    <span></span>
+    Gorras
+  </label>
 
-      <article class="producto" data-category="lentes">
-        <img src="\images\ls.jpg" alt="Lentes de sol">
-        <h2>Lentes de sol</h2>
-        <p>$19.000</p>
-        <button class="add-to-cart">Agregar al carrito</button>
-      </article>
+  <label>
+    <input type="checkbox" value="reloj" class="filter">
+    <span></span>
+    Relojes
+  </label>
+</aside>
 
-      <article class="producto" data-category="gorra">
-        <img src="\images\g.webp" alt="Gorra estilo NBA">
-        <h2>Gorra estilo NBA</h2>
-        <p>$18.500</p>
-        <button class="add-to-cart">Agregar al carrito</button>
-      </article>
+<!-- PRODUCTOS (cada uno abre su página individual) -->
+<main class="productos" id="productos">
 
-      <article class="producto" data-category="reloj">
-        <img src="\images\rh.jpg" alt="Reloj">
-        <h2>Reloj Montreal</h2>
-        <p>$40.700</p>
-        <button class="add-to-cart">Agregar al carrito</button>
-      </article>
+    <a href="productos/remera-basica.html" class="producto" data-category="remera">
+      <img src="images/r1.avif" alt="Remera básica">
+      <h2>Remera básica</h2>
+      <p>$15.000</p>
+      <button class="add-to-cart" data-name="Remera básica" data-price="15000">Agregar al carrito</button>
+    </a>
 
-  </main>
+    <a href="productos/pantalon-jogger.html" class="producto" data-category="pantalon">
+      <img src="images/pj.webp" alt="Pantalón jogger">
+      <h2>Pantalón jogger</h2>
+      <p>$39.500</p>
+      <button class="add-to-cart" data-name="Pantalón jogger" data-price="39500">Agregar al carrito</button>
+    </a>
+
+    <a href="productos/buzo-oversize.html" class="producto" data-category="buzo">
+      <img src="images/bo.jpg" alt="Buzo oversize">
+      <h2>Buzo oversize</h2>
+      <p>$32.000</p>
+      <button class="add-to-cart" data-name="Buzo oversize" data-price="32000">Agregar al carrito</button>
+    </a>
+
+    <a href="productos/remera-estampada.html" class="producto" data-category="remera">
+      <img src="images/re.jpg" alt="Remera estampada">
+      <h2>Remera estampada</h2>
+      <p>$20.500</p>
+      <button class="add-to-cart" data-name="Remera estampada" data-price="20500">Agregar al carrito</button>
+    </a>
+
+    <a href="productos/campera-cuero.html" class="producto" data-category="campera">
+      <img src="images/cc.jpg" alt="Campera de cuero">
+      <h2>Campera de cuero</h2>
+      <p>$60.500</p>
+      <button class="add-to-cart" data-name="Campera de cuero" data-price="60500">Agregar al carrito</button>
+    </a>
+
+    <a href="productos/lentes-sol.html" class="producto" data-category="lentes">
+      <img src="images/ls.jpg" alt="Lentes de sol">
+      <h2>Lentes de sol</h2>
+      <p>$19.000</p>
+      <button class="add-to-cart" data-name="Lentes de sol" data-price="19000">Agregar al carrito</button>
+    </a>
+
+    <a href="productos/gorra-nba.html" class="producto" data-category="gorra">
+      <img src="images/g.webp" alt="Gorra estilo NBA">
+      <h2>Gorra estilo NBA</h2>
+      <p>$18.500</p>
+      <button class="add-to-cart" data-name="Gorra estilo NBA" data-price="18500">Agregar al carrito</button>
+    </a>
+
+    <a href="productos/reloj-montreal.html" class="producto" data-category="reloj">
+      <img src="images/rh.jpg" alt="Reloj Montreal">
+      <h2>Reloj Montreal</h2>
+      <p>$40.700</p>
+      <button class="add-to-cart" data-name="Reloj Montreal" data-price="40700">Agregar al carrito</button>
+    </a>
+
+</main>
+
 
 </div>
 

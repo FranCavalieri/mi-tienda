@@ -12,6 +12,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  text-decoration: none;
 }
 
 body {
@@ -68,8 +69,6 @@ header nav a:hover {
 .inicio .nosotros p {
   font-size: 25px;
   color: #1a0463;
-
-
 }
 
 .cart {
@@ -91,26 +90,74 @@ header nav a:hover {
 }
 
 
-/* Sidebar */
 .sidebar {
-  background-color: white;
-  margin-top: 40px;
-  padding: 1rem;
-  width: 200px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  height: fit-content;
+  background-color: #ffffff;
+  padding: 20px;
+  width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 130px; /* se queda fijo al scrollear */
 }
 
 .sidebar h3 {
-  margin-bottom: 1rem;
+  font-size: 20px;
+  font-weight: bold;
+  color: #1a0463;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
+/* contenedor de cada item */
 .sidebar label {
-  display: block;
-  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 8px;
   cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.25s;
+  font-size: 15px;
+  color: #1a0463;
 }
+
+.sidebar label:hover {
+  background-color: rgba(26, 4, 99, 0.08); /* azul suave */
+}
+
+/* ocultamos el checkbox original */
+.sidebar input[type="checkbox"] {
+  display: none;
+}
+
+/* Estilo del check personalizado */
+.sidebar input[type="checkbox"] + span {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #1a0463;
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+  transition: all 0.25s;
+}
+
+/* cuando está marcado */
+.sidebar input[type="checkbox"]:checked + span {
+  background-color: #c9940e;
+  border-color: #c9940e;
+  box-shadow: 0 0 6px rgba(201, 148, 14, 0.7);
+}
+
+/* check interno */
+.sidebar input[type="checkbox"]:checked + span::after {
+  content: "✔";
+  color: #ffffff;
+  font-size: 14px;
+  position: absolute;
+  top: 0;
+  left: 4px;
+}
+
 
 /* Productos */
 
@@ -124,6 +171,8 @@ header nav a:hover {
 
 /* TARJETA UNIFORME */
 .producto {
+  max-width: 280px;  /* evita que se agrande cuando queda sola */
+  margin: 0 auto;    /* la centra dentro del grid */
   background-color: white;
   border-radius: 8px;
   padding: 1rem;
@@ -256,7 +305,7 @@ header nav a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
-  background-color: white;
+  background-color: #1a0463;
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -264,6 +313,7 @@ header nav a:hover {
   z-index: 10;
   width: 300px;
   text-align: center;
+  color: white;
 }
 
 .cart-modal.active {
@@ -349,4 +399,98 @@ footer .arriba img{
 footer p{
 font-size: 20px;
 padding-left: 10px;
+}
+
+/* === PRODUCTO INDIVIDUAL === */
+
+.producto-detalle {
+  max-width: 1200px;
+  margin: 150px auto 50px;
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.15);
+}
+
+.producto-img {
+  width: 50%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.producto-info {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.producto-info h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: #1a0463;
+}
+
+.producto-info .precio {
+  font-size: 26px;
+  font-weight: bold;
+  color: #c9940e;
+  margin-bottom: 20px;
+}
+
+.producto-info .desc {
+  color: #333;
+  font-size: 18px;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.producto-info h3 {
+  color: #1a0463;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.producto-info ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 10px;
+}
+
+.producto-info ul li {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+/* Botón agregar al carrito */
+.producto-info .add-to-cart {
+  background-color: #c9940e;
+  border: none;
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  margin-top: 20px;
+  width: fit-content;
+  transition: background 0.3s;
+}
+
+.producto-info .add-to-cart:hover {
+  background-color: #1a0463;
+}
+
+/* Botón volver */
+.volver {
+  display: inline-block;
+  margin-top: 20px;
+  color: #1a0463;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.volver:hover {
+  text-decoration: underline;
 }
