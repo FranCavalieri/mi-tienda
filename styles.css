@@ -494,3 +494,20 @@ padding-left: 10px;
 .volver:hover {
   text-decoration: underline;
 }
+
+.checkout-btn {
+  background-color: #1a0463;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  width: 100%;
+  cursor: pointer;
+  margin: 10px 0 15px 0;
+  transition: background 0.3s;
+}
+
+.checkout-btn:hover {
+  background-color: #c9940e;
+}

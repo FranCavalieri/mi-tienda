@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout - FC Indumentaria</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .checkout-container {
+      max-width: 900px;
+      margin: 140px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.2);
+      color: #1a0463;
+    }
+    h2 { margin-bottom: 20px; }
+    .section {
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #c9940e;
+    }
+
+    label { display:block; margin: 10px 0 5px; }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #c9940e;
+      margin-bottom: 10px;
+    }
+
+    .payment-methods {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .method {
+      background: #1a0463;
+      color: #fff;
+      flex: 1;
+      min-width: 200px;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: .3s;
+    }
+    .method:hover {
+      background: #c9940e;
+    }
+    .method.selected {
+      border-color: #c9940e;
+      background: #c9940e;
+    }
+
+    #confirmar-compra {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      background: #1a0463;
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    #confirmar-compra:hover {
+      background: #c9940e;
+    }
+  </style>
+</head>
+<body>
+  <div class="checkout-container">
+    <h2>Finalizar Compra</h2>
+
+    <div class="section">
+      <h3>Datos del Cliente</h3>
+      <label>Nombre completo</label>
+      <input type="text" id="nombre" required />
+
+      <label>Teléfono</label>
+      <input type="text" id="telefono" required />
+
+      <label>Dirección de entrega</label>
+      <input type="text" id="direccion" required />
+    </div>
+
+    <div class="section">
+      <h3>Método de Pago</h3>
+      <div class="payment-methods">
+        <div class="method" data-method="efectivo">Efectivo</div>
+        <div class="method" data-method="transferencia">Transferencia Bancaria</div>
+        <div class="method" data-method="mercadopago">Mercado Pago</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Resumen del Pedido</h3>
+      <div id="resumen"></div>
+      <h3>Total: $<span id="total"></span></h3>
+    </div>
+
+    <button id="confirmar-compra">Confirmar Compra</button>
+  </div>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem("fc_cart_v1")) || [];
+    const resumen = document.getElementById("resumen");
+    const totalSpan = document.getElementById("total");
+
+    let total = 0;
+    cart.forEach(item => {
+      resumen.innerHTML += `<p>• ${item.name} - $${item.price}</p>`;
+      total += item.price;
+    });
+    totalSpan.textContent = total;
+
+    // selección de método
+    let metodoSeleccionado = "";
+    document.querySelectorAll(".method").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".method").forEach(b => b.classList.remove("selected"));
+        btn.classList.add("selected");
+        metodoSeleccionado = btn.dataset.method;
+      });
+    });
+
+    document.getElementById("confirmar-compra").addEventListener("click", () => {
+      const nombre = document.getElementById("nombre").value;
+      const telefono = document.getElementById("telefono").value;
+      const direccion = document.getElementById("direccion").value;
+
+      if (!nombre || !telefono || !direccion || !metodoSeleccionado) {
+        alert("Por favor completá todos los datos y seleccioná un método de pago.");
+        return;
+      }
+
+      alert(`Compra confirmada!\n\nNombre: ${nombre}\nTel: ${telefono}\nDirección: ${direccion}\nMétodo: ${metodoSeleccionado}\nTotal: $${total}`);
+
+      // limpiar carrito
+      localStorage.removeItem("fc_cart_v1");
+    });
+  </script>
+</body>
+</html>
